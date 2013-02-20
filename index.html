@@ -6,6 +6,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/morejs.js"></script>
 
     <!--Linked Fonts -->
@@ -31,10 +32,12 @@
     </div>
     <div class="span8">
         <h3>Teams Playing this Year</h3>
+        <!-- append array output -->
+        <div id="results"><div>
         <script>
         for(i=0; i<league.length; i++)
         document.write(league[i].teamName + " <em>sponsored by</em> " + league[i].sponsor + "<br>");
-        </script>
+        // </script>
     </div>
   </div>
 
@@ -85,21 +88,21 @@
         <h3 id="myModalLabel">Bats, Beers & Brats</h3>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="signup_form">
         <div class="control-group">
           <label class="control-label" for="inputTeam">Team name</label>
           <div class="controls">
-            <input type="text" id="inputTeamName" placeholder="Keep it clean, please!">
+            <input type="text" id="inputTeamName" required placeholder="Keep it clean, please">
           </div>
         </div>
         <div class="control-group">
           <label class="control-label" for="inputMgr">Manager's name</label>
           <div class="controls">
-            <input type="text" id="inputMgrFirst" placeholder="First">
+            <input type="text" id="inputMgrFirst" required placeholder="First">
           </div>
           <br>
           <div class="controls">
-            <input type="text" id="inputMgrSecond" placeholder="Last">
+            <input type="text" id="inputMgrSecond" required placeholder="Last">
           </div>
         </div>
         <div class="control-group">
@@ -111,13 +114,13 @@
         <div class="control-group">
           <label class="control-label" for="inputEmail">Manager's email</label>
           <div class="controls">
-            <input type="email" id="inputMgrEmail" placeholder="">
+            <input type="email" id="inputMgrEmail" class="required email" placeholder="">
           </div>
         </div>
         <div class="control-group">
           <label class="control-label" for="inputZip">Manager's zipcode</label>
           <div class="controls">
-            <input type="number" id="inputMgrZip" placeholder="">
+            <input type="text" id="inputMgrZip" placeholder="">
           </div>
         </div>
         <div class="control-group">
@@ -130,7 +133,7 @@
       </div>
       <div class="modal-footer">
       <!-- <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button> -->
-      <button class="btn btn-primary" id="register" data-dismiss="modal" aria-hidden="true">Register Your Team</button>
+      <button class="btn btn-primary" id="register" >Register Your Team</button>
       </div>
       </div>
 
@@ -148,5 +151,6 @@
   </div>
   
 </div>
+
 </body>
 </html>

@@ -27,10 +27,19 @@ var league = new Array();
 league[0] = new Team("Ardvarks", "Christopher", "Fryman", 9016045976, "farfromguam@gmail.com", 37210, "Fryman and Assoiciates", 67, 17);
 league[1] = new Team("Boss Hoggs", "Joe", "Shepherd", 6154840875, "shepright@comcast.net", 37205, "Brewhouse West", 3, 2);
 
-
+//http://stackoverflow.com/questions/351409/appending-to-array
 // Joes modal stuff
 $(document).ready(function(){
-$("#register").click(function(){
-  document.write("Hello there.");
+$('#register').click(function() {
+$('input').each(function(){
+        $('#results').append($(this).val() + "<br/>")
+        });
 });
+
+  $("#signup_form").validate();
 }); //end of ready
+
+
+
+
+
