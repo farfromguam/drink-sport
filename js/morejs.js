@@ -31,10 +31,10 @@ league[1] = new Team("Boss Hoggs", "Joe", "Shepherd", 6154840875, "shepright@com
 // Joes modal stuff
 $(document).ready(function(){
 $('#register').click(function() {
-$('input').each(function(){
-        $('#results').append($(this).val() + "<br/>")
+    $('#results').append($("#inputTeamName").val() + " <em>sponsored by</em> " + $("#inputSponsor").val());
+        // $('input').each(function(){
+        // $('#results').append($(this).val() + "<br/>")
         });
-});
 
   $("#signup_form").validate();
 }); //end of ready
