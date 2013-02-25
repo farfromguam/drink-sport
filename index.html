@@ -15,7 +15,7 @@
       <div class="row">
         <!--banner-->
         <div class="span2 pull-right text-right">
-          <a class="btn" onclick="manage()">Secure login</a>
+          <a class="btn" id="login">Secure login</a>
           <a class="btn manage" onclick="startSeason()">startSeason()</a>
         </div>
         <div class="span8 offset2">
@@ -65,48 +65,48 @@
                   <div class="control-group">
                     <label class="control-label">Team name</label>
                     <div class="controls">
-                      <input type="text" id="inputTeamName" class="teamImput" placeholder="Keep it clean, please!">
+                      <input type="text" id="inputTeamName" class="teamInput" placeholder="Keep it clean, please!">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Manager's name</label>
                     <div class="controls">
-                      <input type="text" id="inputMgrFirst" class="teamImput" placeholder="First">
+                      <input type="text" id="inputMgrFirst" class="teamInput" placeholder="First">
                     </div>
                     <br>
                     <div class="controls">
-                      <input type="text" id="inputMgrLast" class="teamImput" placeholder="Last">
+                      <input type="text" id="inputMgrLast" class="teamInput" placeholder="Last">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Manager's phone</label>
                     <div class="controls">
-                      <input type="tel" id="inputMgrPhone" class="teamImput" placeholder="xxx-xxx-xxxx">
+                      <input type="tel" id="inputMgrPhone" class="teamInput" placeholder="xxx-xxx-xxxx">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Manager's email</label>
                     <div class="controls">
-                      <input type="email" id="inputMgrEmail" class="teamImput" placeholder="">
+                      <input type="email" id="inputMgrEmail" class="teamInput" placeholder="">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Manager's zipcode</label>
                     <div class="controls">
-                      <input type="text" id="inputMgrZip" class="teamImput" placeholder="">
+                      <input type="text" id="inputMgrZip" class="teamInput" placeholder="">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Team sponsor</label>
                     <div class="controls">
-                      <input type="text" id="inputSponsor" class="teamImput" placeholder="">
+                      <input type="text" id="inputSponsor" class="teamInput" placeholder="">
                     </div>
                   </div>
                 </form>
               </div>
               <div class="modal-footer grass">
                 <button class="btn" onclick="clearForm()">Clear Form</button>
-                <button class="btn" id="register" data-dismiss="modal" aria-hidden="true" onclick="addTeam()">Register Your Team</button>
+                <button class="btn" id="register" data-dismiss="modal" aria-hidden="true">Register Your Team</button>
               </div>
             </div>
           </div>

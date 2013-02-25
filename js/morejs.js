@@ -15,7 +15,7 @@ $(document).ready(function () {
       track("Teams loaded!");
     }
   }); // end ajax
-}); // end ready
+
 
 // // The league 
 // // 0-team name, 1-Manager, 2-Manager Last, 3-Phone, 4-Email, 5-Zip, 6-Sponsor, 7-Wins, 8-Losses, 9-Percent
@@ -27,6 +27,7 @@ $(document).ready(function () {
 var leagueAll = [];
 
 // add team to league
+$('#register').click(function (){
 function addTeam() {
 
   var team = {
@@ -42,7 +43,7 @@ function addTeam() {
   };
 
   $.ajax({
-    url: 'backliftapp/team',
+    url: "backliftapp/team",
     type: "POST",
     dataType: "json",
     data: team,
@@ -56,25 +57,43 @@ function addTeam() {
   });
 
 }; // end add team
+}); //end click
 
 $(".deleteTeam").click(function () {
-  alert(this.data.id);
-});
+      $.ajax({
+        url: "backliftapp/team/team.id",
+        type: "DELETE",
+        dataType: "json",
+        data: team,
+        success: function (data) {
+          leagueAll = data;
+          for (var i = 0; i < data.length; i++) {
+           addTeamToTable(data[i]);
+          populateTeamList(data[i]);
+          
+        }
+    }
+  });
+}); //end click
+
+// $(".deleteTeam").click(function () {
+//   alert(this.data.id);
+// });
 
 function track(item) {
   $('#console').append(item + "<br>");
 }
 
 function clearForm() {
-  $(".teamImput").each(function () {
+  $(".teamInput").each(function () {
     $(this).val("");
   });
 };
 
-function manage() {
+$('#login').click(function manage() {
   track("You are now logged in");
   $(".manage").css("display", "inline");
-}
+}); //end click
 
 function startSeason() {
   $(".playing").css("display", "none");
@@ -118,6 +137,8 @@ function doPopovers() {
     track("Popover working!")
   });
 }
+
+}); // end ready
 
 // // reusable sort functions, and sort by any field
 // // http://stackoverflow.com/questions/979256/how-to-sort-an-array-of-javascript-objects
